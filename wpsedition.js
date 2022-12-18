@@ -106,11 +106,11 @@ square[31] = new Square("N4", "£300", "#008000", 300, 9, 26, 130, 390, 900, 110
 square[32] = new Square("D7", "£300", "#008000", 300, 9, 26, 130, 390, 900, 1100, 1275);
 square[33] = new Square("Community Chest", "FOLLOW INSTRUCTIONS ON TOP CARD", "#FFFFFF");
 square[34] = new Square("N3", "£320", "#008000", 320, 9, 28, 150, 450, 1000, 1200, 1400);
-square[35] = new Square("HoY Office", "$200", "#FFFFFF", 200, 1);
+square[35] = new Square("HoY Office", "£200", "#FFFFFF", 200, 1);
 square[36] = new Square("Chance", "FOLLOW INSTRUCTIONS ON TOP CARD", "#FFFFFF");
 square[37] = new Square("Kate Curtis Centre", "£350", "#0000FF", 350, 10, 35, 175, 500, 1100, 1300, 1500);
-square[38] = new Square("National Insurance", "Pay $100", "#FFFFFF");
-square[39] = new Square("Old House", "$400", "#0000FF", 400, 10, 50, 200, 600, 1400, 1700, 2000);
+square[38] = new Square("National Insurance", "Pay £100", "#FFFFFF");
+square[39] = new Square("Old House", "£400", "#0000FF", 400, 10, 50, 200, 600, 1400, 1700, 2000);
 
 var communityChestCards = [];
 var chanceCards = [];
