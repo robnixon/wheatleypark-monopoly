@@ -48,11 +48,11 @@ function corrections() {
 }
 
 function utiltext() {
-	return '&nbsp;&nbsp;&nbsp;&nbsp;If one "Utility" is owned rent is 4 times amount shown on dice.<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;If both "Utilitys" are owned rent is 10 times amount shown on dice.';
+	return '&nbsp;&nbsp;&nbsp;&nbsp;If one food outlet is owned rent is 4 times amount shown on dice.<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;If both "Utilitys" are owned rent is 10 times amount shown on dice.';
 }
 
 function transtext() {
-	return '<div style="font-size: 14px; line-height: 1.5;">Rent<span style="float: right;">$25.</span><br />If 2 Railroads are owned<span style="float: right;">50.</span><br />If 3 &nbsp; &nbsp; " &nbsp; &nbsp; " &nbsp; &nbsp; "<span style="float: right;">100.</span><br />If 4 &nbsp; &nbsp; " &nbsp; &nbsp; " &nbsp; &nbsp; "<span style="float: right;">200.</span></div>';
+	return '<div style="font-size: 14px; line-height: 1.5;">Rent<span style="float: right;">$25.</span><br />If 2 Offices are owned<span style="float: right;">50.</span><br />If 3 &nbsp; &nbsp; " &nbsp; &nbsp; " &nbsp; &nbsp; "<span style="float: right;">100.</span><br />If 4 &nbsp; &nbsp; " &nbsp; &nbsp; " &nbsp; &nbsp; "<span style="float: right;">200.</span></div>';
 }
 
 function luxurytax() {
@@ -116,11 +116,11 @@ var communityChestCards = [];
 var chanceCards = [];
 
 communityChestCards[0] = new Card("Get out of Parking, Free. This card may be kept until needed or sold.", function(p) { p.communityChestJailCard = true; updateOwned();});
-communityChestCards[1] = new Card("You have won second prize in a beauty contest. Collect $10.", function() { addamount(10, 'Community Chest');});
-communityChestCards[2] = new Card("From sale of stock, you get $50.", function() { addamount(50, 'Community Chest');});
-communityChestCards[3] = new Card("Life insurance matures. Collect $100.", function() { addamount(100, 'Community Chest');});
-communityChestCards[4] = new Card("Long service gift. Collect $20.", function() { addamount(20, 'Community Chest');});
-communityChestCards[5] = new Card("Two months back pay. Receive $100.", function() { addamount(100, 'Community Chest');});
+communityChestCards[1] = new Card("You have won second prize in a staff beauty contest. Collect £10.", function() { addamount(10, 'Community Chest');});
+communityChestCards[2] = new Card("Due extra lunctime duties, get £50.", function() { addamount(50, 'Community Chest');});
+communityChestCards[3] = new Card("Long service gift. Collect £100.", function() { addamount(100, 'Community Chest');});
+communityChestCards[4] = new Card("Win staff recognition. Collect £20.", function() { addamount(20, 'Community Chest');});
+communityChestCards[5] = new Card("Two months back pay. Receive £100.", function() { addamount(100, 'Community Chest');});
 communityChestCards[6] = new Card("You inherit $100.", function() { addamount(100, 'Community Chest');});
 communityChestCards[7] = new Card("Receive £25 selling resources on TES.", function() { addamount(25, 'Community Chest');});
 communityChestCards[8] = new Card("Pay NHS dental fees of £100.", function() { subtractamount(100, 'Community Chest');});
@@ -128,7 +128,7 @@ communityChestCards[9] = new Card("Bank error in your favor. Collect £200.", fu
 communityChestCards[10] = new Card("Pay childcare fees of £50.", function() { subtractamount(50, 'Community Chest');});
 communityChestCards[11] = new Card("NHS prescription fee. Pay £10.", function() { subtractamount(10, 'Community Chest');});
 communityChestCards[12] = new Card("It is your birthday. Collect £10 from every player.", function() { collectfromeachplayer(10, 'Community Chest');});
-communityChestCards[13] = new Card("Advance to \"GO\" (Collect $200).", function() { advance(0);});
+communityChestCards[13] = new Card("Advance to \"GO\" (Collect £200).", function() { advance(0);});
 communityChestCards[14] = new Card("Make General Repairs on All Your classroom displays. For each small display pay £25. For each large display £100.", function() { streetrepairs(40, 115);});
 communityChestCards[15] = new Card("Go to Parking. Go directly to Parking. Do not pass \"GO\". Do not collect £200.", function() { gotojail();});
 
@@ -138,14 +138,9 @@ chanceCards[1] = new Card("Make General Repairs on All Your classroom displays. 
 chanceCards[2] = new Card("Mr Pearson catches you running dangerously in the corridor. Speeding fine £15.", function() { subtractamount(15, 'Chance');});
 chanceCards[3] = new Card("You have been appointed wellbeing champion. Buy each player a luxury chocolate box £50.", function() { payeachplayer(50, 'Chance');});
 chanceCards[4] = new Card("Go back three spaces.", function() { gobackthreespaces();});
-chanceCards[5] = new Card("ADVANCE TO THE NEAREST OFFICE. IF UNOWNED, you may buy it from the Bank. IF OWNED, throw dice and pay owner a total ten times the amount thrown.", function() { advanceToNearestUtility();});
+chanceCards[5] = new Card("ADVANCE TO THE NEAREST FOOD OUTLET. IF UNOWNED, you may buy it from the Bank. IF OWNED, throw dice and pay owner a total ten times the amount thrown.", function() { advanceToNearestUtility();});
 chanceCards[6] = new Card("Bank pays you dividend of £50.", function() { addamount(50, 'Chance');});
-chanceCards[7] = new Card("ADVANCE TO THE NEAREST RAILROAD. If UNOWNED, you may buy it from the Bank. If OWNED, pay owner twice the rental to which they are otherwise entitled.", function() { advanceToNearestRailroad();});
+chanceCards[7] = new Card("ADVANCE TO THE NEAREST OFFICE. If UNOWNED, you may buy it from the Bank. If OWNED, pay owner twice the rental to which they are otherwise entitled.", function() { advanceToNearestRailroad();});
 chanceCards[8] = new Card("Pay union subs of £15.", function() { subtractamount(15, 'Chance');});
-chanceCards[9] = new Card("Take a trip to Reading Rail Road. If you pass \"GO\" collect £200.", function() { advance(5);});
-chanceCards[10] = new Card("ADVANCE to Boardwalk.", function() { advance(39);});
-chanceCards[11] = new Card("ADVANCE to Illinois Avenue. If you pass \"GO\" collect £200.", function() { advance(24);});
-chanceCards[12] = new Card("Your building loan matures. Collect $150.", function() { addamount(150, 'Chance');});
-chanceCards[13] = new Card("ADVANCE TO THE NEAREST RAILROAD. If UNOWNED, you may buy it from the Bank. If OWNED, pay owner twice the rental to which they are otherwise entitled.", function() { advanceToNearestRailroad();});
-chanceCards[14] = new Card("ADVANCE to St. Charles Place. If you pass \"GO\" collect £200.", function() { advance(11);});
-chanceCards[15] = new Card("Go to Jail. Go Directly to Jail. Do not pass \"GO\". Do not collect £200.", function() { gotojail();});
+chanceCards[9] = new Card("Government gives you a levelling up bonus for teaching a shortage subject. Collect £150.", function() { addamount(150, 'Chance');});
+chanceCards[10] = new Card("Go to Parking. Go Directly to Parking. Do not pass \"GO\". Do not collect £200.", function() { gotojail();});
