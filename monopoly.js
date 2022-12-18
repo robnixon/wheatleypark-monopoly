@@ -475,7 +475,7 @@ function Game() {
 			currentTableCellCheckbox = currentTableCell.appendChild(document.createElement("input"));
 			currentTableCellCheckbox.type = "checkbox";
 			currentTableCellCheckbox.id = "tradeleftcheckbox40";
-			currentTableCellCheckbox.title = "Check this box to include this Get Out of Jail Free Card in the trade.";
+			currentTableCellCheckbox.title = "Check this box to include this Get Out of Parking Free Card in the trade.";
 
 			currentTableCell = currentTableRow.appendChild(document.createElement("td"));
 			currentTableCell.className = "propertycellcolor";
@@ -485,7 +485,7 @@ function Game() {
 			currentTableCell = currentTableRow.appendChild(document.createElement("td"));
 			currentTableCell.className = "propertycellname";
 
-			currentTableCell.textContent = "Get Out of Jail Free Card";
+			currentTableCell.textContent = "Get Out of Parking Free Card";
 		} else if (recipient.communityChestJailCard) {
 			currentTableRow = recipientSideTable.appendChild(document.createElement("tr"));
 			currentTableRow.onclick = tableRowOnClick;
@@ -495,7 +495,7 @@ function Game() {
 			currentTableCellCheckbox = currentTableCell.appendChild(document.createElement("input"));
 			currentTableCellCheckbox.type = "checkbox";
 			currentTableCellCheckbox.id = "traderightcheckbox40";
-			currentTableCellCheckbox.title = "Check this box to include this Get Out of Jail Free Card in the trade.";
+			currentTableCellCheckbox.title = "Check this box to include this Get Out of Parking Free Card in the trade.";
 
 			currentTableCell = currentTableRow.appendChild(document.createElement("td"));
 			currentTableCell.className = "propertycellcolor";
@@ -505,7 +505,7 @@ function Game() {
 			currentTableCell = currentTableRow.appendChild(document.createElement("td"));
 			currentTableCell.className = "propertycellname";
 
-			currentTableCell.textContent = "Get Out of Jail Free Card";
+			currentTableCell.textContent = "Get Out of Parking Free Card";
 		}
 
 		if (initiator.chanceJailCard) {
@@ -517,7 +517,7 @@ function Game() {
 			currentTableCellCheckbox = currentTableCell.appendChild(document.createElement("input"));
 			currentTableCellCheckbox.type = "checkbox";
 			currentTableCellCheckbox.id = "tradeleftcheckbox41";
-			currentTableCellCheckbox.title = "Check this box to include this Get Out of Jail Free Card in the trade.";
+			currentTableCellCheckbox.title = "Check this box to include this Get Out of Parking Free Card in the trade.";
 
 			currentTableCell = currentTableRow.appendChild(document.createElement("td"));
 			currentTableCell.className = "propertycellcolor";
@@ -527,7 +527,7 @@ function Game() {
 			currentTableCell = currentTableRow.appendChild(document.createElement("td"));
 			currentTableCell.className = "propertycellname";
 
-			currentTableCell.textContent = "Get Out of Jail Free Card";
+			currentTableCell.textContent = "Get Out of Parking Free Card";
 		} else if (recipient.chanceJailCard) {
 			currentTableRow = recipientSideTable.appendChild(document.createElement("tr"));
 			currentTableRow.onclick = tableRowOnClick;
@@ -537,7 +537,7 @@ function Game() {
 			currentTableCellCheckbox = currentTableCell.appendChild(document.createElement("input"));
 			currentTableCellCheckbox.type = "checkbox";
 			currentTableCellCheckbox.id = "traderightcheckbox41";
-			currentTableCellCheckbox.title = "Check this box to include this Get Out of Jail Free Card in the trade.";
+			currentTableCellCheckbox.title = "Check this box to include this Get Out of Parking Free Card in the trade.";
 
 			currentTableCell = currentTableRow.appendChild(document.createElement("td"));
 			currentTableCell.className = "propertycellcolor";
@@ -547,7 +547,7 @@ function Game() {
 			currentTableCell = currentTableRow.appendChild(document.createElement("td"));
 			currentTableCell.className = "propertycellname";
 
-			currentTableCell.textContent = "Get Out of Jail Free Card";
+			currentTableCell.textContent = "Get Out of Parking Free Card";
 		}
 
 		if (initiatorSideTable.lastChild) {
@@ -817,21 +817,21 @@ function Game() {
 		if (tradeObj.getCommunityChestJailCard() === 1) {
 			initiator.communityChestJailCard = false;
 			recipient.communityChestJailCard = true;
-			addAlert(recipient.name + ' received a "Get Out of Jail Free" card from ' + initiator.name + ".");
+			addAlert(recipient.name + ' received a "Get Out of Parking Free" card from ' + initiator.name + ".");
 		} else if (tradeObj.getCommunityChestJailCard() === -1) {
 			initiator.communityChestJailCard = true;
 			recipient.communityChestJailCard = false;
-			addAlert(initiator.name + ' received a "Get Out of Jail Free" card from ' + recipient.name + ".");
+			addAlert(initiator.name + ' received a "Get Out of Parking Free" card from ' + recipient.name + ".");
 		}
 
 		if (tradeObj.getChanceJailCard() === 1) {
 			initiator.chanceJailCard = false;
 			recipient.chanceJailCard = true;
-			addAlert(recipient.name + ' received a "Get Out of Jail Free" card from ' + initiator.name + ".");
+			addAlert(recipient.name + ' received a "Get Out of Parking Free" card from ' + initiator.name + ".");
 		} else if (tradeObj.getChanceJailCard() === -1) {
 			initiator.chanceJailCard = true;
 			recipient.chanceJailCard = false;
-			addAlert(initiator.name + ' received a "Get Out of Jail Free" card from ' + recipient.name + ".");
+			addAlert(initiator.name + ' received a "Get Out of Parking Free" card from ' + recipient.name + ".");
 		}
 
 		// Exchange money.
@@ -839,14 +839,14 @@ function Game() {
 			initiator.pay(money, recipient.index);
 			recipient.money += money;
 
-			addAlert(recipient.name + " received $" + money + " from " + initiator.name + ".");
+			addAlert(recipient.name + " received £" + money + " from " + initiator.name + ".");
 		} else if (money < 0) {
 			money = -money;
 
 			recipient.pay(money, initiator.index);
 			initiator.money += money;
 
-			addAlert(initiator.name + " received $" + money + " from " + recipient.name + ".");
+			addAlert(initiator.name + " received £" + money + " from " + recipient.name + ".");
 		}
 
 		updateOwned();
@@ -882,11 +882,11 @@ function Game() {
 		var reversedTradeProperty = [];
 
 		if (money > 0 && money > initiator.money) {
-			document.getElementById("trade-leftp-money").value = initiator.name + " does not have $" + money + ".";
+			document.getElementById("trade-leftp-money").value = initiator.name + " does not have £" + money + ".";
 			document.getElementById("trade-leftp-money").style.color = "red";
 			return false;
 		} else if (money < 0 && -money > recipient.money) {
-			document.getElementById("trade-rightp-money").value = recipient.name + " does not have $" + (-money) + ".";
+			document.getElementById("trade-rightp-money").value = recipient.name + " does not have £" + (-money) + ".";
 			document.getElementById("trade-rightp-money").style.color = "red";
 			return false;
 		}
@@ -1024,7 +1024,7 @@ function Game() {
 				}
 
 				// Player already paid interest, so they can unmortgage for the mortgage price.
-				HTML += "' onmouseover='showdeed(" + i + ");' onmouseout='hidedeed();'></td><td class='propertycellname'><a href='javascript:void(0);' title='Unmortgage " + sq.name + " for $" + price + ".' onclick='if (" + price + " <= player[" + p.creditor + "].money) {player[" + p.creditor + "].pay(" + price + ", 0); square[" + i + "].mortgage = false; addAlert(\"" + player[p.creditor].name + " unmortgaged " + sq.name + " for $" + price + ".\");} this.parentElement.parentElement.style.display = \"none\";'>Unmortgage " + sq.name + " ($" + price + ")</a></td></tr>";
+				HTML += "' onmouseover='showdeed(" + i + ");' onmouseout='hidedeed();'></td><td class='propertycellname'><a href='javascript:void(0);' title='Unmortgage " + sq.name + " for £" + price + ".' onclick='if (" + price + " <= player[" + p.creditor + "].money) {player[" + p.creditor + "].pay(" + price + ", 0); square[" + i + "].mortgage = false; addAlert(\"" + player[p.creditor].name + " unmortgaged " + sq.name + " for £" + price + ".\");} this.parentElement.parentElement.style.display = \"none\";'>Unmortgage " + sq.name + " (£" + price + ")</a></td></tr>";
 
 				sq.owner = p.creditor;
 
@@ -1097,7 +1097,7 @@ function Game() {
 		if (pcount === 2 || bankruptcyUnmortgageFee === 0 || p.creditor === 0) {
 			game.eliminatePlayer();
 		} else {
-			addAlert(pcredit.name + " paid $" + bankruptcyUnmortgageFee + " interest on the mortgaged properties received from " + p.name + ".");
+			addAlert(pcredit.name + " paid £" + bankruptcyUnmortgageFee + " interest on the mortgaged properties received from " + p.name + ".");
 			popup("<p>" + pcredit.name + ", you must pay $" + bankruptcyUnmortgageFee + " interest on the mortgaged properties you received from " + p.name + ".</p>", function() {player[pcredit.index].pay(bankruptcyUnmortgageFee, 0); game.bankruptcyUnmortgage();});
 		}
 	};
@@ -1499,7 +1499,7 @@ function updateOwned() {
 			firstproperty = 40;
 			HTML += "<table>";
 		}
-		HTML += "<tr class='property-cell-row'><td class='propertycellcheckbox'><input type='checkbox' id='propertycheckbox40' /></td><td class='propertycellcolor' style='background: white;'></td><td class='propertycellname'>Get Out of Jail Free Card</td></tr>";
+		HTML += "<tr class='property-cell-row'><td class='propertycellcheckbox'><input type='checkbox' id='propertycheckbox40' /></td><td class='propertycellcolor' style='background: white;'></td><td class='propertycellname'>Get Out of Parking Free Card</td></tr>";
 
 	}
 	if (p.chanceJailCard) {
@@ -1507,7 +1507,7 @@ function updateOwned() {
 			firstproperty = 41;
 			HTML += "<table>";
 		}
-		HTML += "<tr class='property-cell-row'><td class='propertycellcheckbox'><input type='checkbox' id='propertycheckbox41' /></td><td class='propertycellcolor' style='background: white;'></td><td class='propertycellname'>Get Out of Jail Free Card</td></tr>";
+		HTML += "<tr class='property-cell-row'><td class='propertycellcheckbox'><input type='checkbox' id='propertycheckbox41' /></td><td class='propertycellcolor' style='background: white;'></td><td class='propertycellname'>Get Out of Parking Free Card</td></tr>";
 	}
 
 	if (HTML === "") {
@@ -1802,8 +1802,8 @@ function subtractamount(amount, cause) {
 
 function gotojail() {
 	var p = player[turn];
-	addAlert(p.name + " was sent directly to jail.");
-	document.getElementById("landed").innerHTML = "You are in jail.";
+	addAlert(p.name + " was sent directly to parking.");
+	document.getElementById("landed").innerHTML = "You are in parking.";
 
 	p.jail = true;
 	doublecount = 0;
@@ -1846,7 +1846,7 @@ function payeachplayer(amount, cause) {
 		}
 	}
 
-	addAlert(p.name + " lost $" + total + " from " + cause + ".");
+	addAlert(p.name + " lost £" + total + " from " + cause + ".");
 }
 
 function collectfromeachplayer(amount, cause) {
@@ -1868,7 +1868,7 @@ function collectfromeachplayer(amount, cause) {
 		}
 	}
 
-	addAlert(p.name + " received $" + total + " from " + cause + ".");
+	addAlert(p.name + " received £" + total + " from " + cause + ".");
 }
 
 function advance(destination, pass) {
@@ -1880,7 +1880,7 @@ function advance(destination, pass) {
 		} else {
 			p.position = pass;
 			p.money += 200;
-			addAlert(p.name + " collected a $200 salary for passing GO.");
+			addAlert(p.name + " collected a £200 salary for passing GO.");
 		}
 	}
 	if (p.position < destination) {
@@ -1888,7 +1888,7 @@ function advance(destination, pass) {
 	} else {
 		p.position = destination;
 		p.money += 200;
-		addAlert(p.name + " collected a $200 salary for passing GO.");
+		addAlert(p.name + " collected a £200 salary for passing GO.");
 	}
 
 	land();
@@ -1904,7 +1904,7 @@ function advanceToNearestUtility() {
 	} else if (p.position >= 28) {
 		p.position = 12;
 		p.money += 200;
-		addAlert(p.name + " collected a $200 salary for passing GO.");
+		addAlert(p.name + " collected a £200 salary for passing GO.");
 	}
 
 	land(true);
@@ -1922,7 +1922,7 @@ function advanceToNearestRailroad() {
 	} else if (p.position >= 35) {
 		p.position = 5;
 		p.money += 200;
-		addAlert(p.name + " collected a $200 salary for passing GO.");
+		addAlert(p.name + " collected a £200 salary for passing GO.");
 	}
 
 	land(true);
@@ -1947,9 +1947,9 @@ function streetrepairs(houseprice, hotelprice) {
 
 		// If function was called by Community Chest.
 		if (houseprice === 40) {
-			addAlert(p.name + " lost $" + cost + " to Community Chest.");
+			addAlert(p.name + " lost £" + cost + " to Community Chest.");
 		} else {
-			addAlert(p.name + " lost $" + cost + " to Chance.");
+			addAlert(p.name + " lost £" + cost + " to Chance.");
 		}
 	}
 
@@ -1969,7 +1969,7 @@ function payfifty() {
 	p.position = 10;
 	p.pay(50, 0);
 
-	addAlert(p.name + " paid the $50 fine to get out of jail.");
+	addAlert(p.name + " paid the £50 fine to get out of parking.");
 	updateMoney();
 	updatePosition();
 }
@@ -2012,7 +2012,7 @@ function useJailCard() {
 		}
 	}
 
-	addAlert(p.name + " used a \"Get Out of Jail Free\" card.");
+	addAlert(p.name + " used a \"Get Out of parking Free\" card.");
 	updateOwned();
 	updatePosition();
 }
@@ -2136,7 +2136,7 @@ function showStats() {
 				write = true;
 				HTML += "<table>";
 			}
-			HTML += "<tr><td class='statscellcolor'></td><td class='statscellname'>Get Out of Jail Free Card</td></tr>";
+			HTML += "<tr><td class='statscellcolor'></td><td class='statscellname'>Get Out of parking Free Card</td></tr>";
 
 		}
 		if (p.chanceJailCard) {
@@ -2144,7 +2144,7 @@ function showStats() {
 				write = true;
 				HTML += "<table>";
 			}
-			HTML += "<tr><td class='statscellcolor'></td><td class='statscellname'>Get Out of Jail Free Card</td></tr>";
+			HTML += "<tr><td class='statscellcolor'></td><td class='statscellname'>Get Out of parking Free Card</td></tr>";
 
 		}
 
@@ -2230,7 +2230,7 @@ function buy() {
 		$("#landed").hide();
 
 	} else {
-		popup("<p>" + p.name + ", you need $" + (property.price - p.money) + " more to buy " + property.name + ".</p>");
+		popup("<p>" + p.name + ", you need £" + (property.price - p.money) + " more to buy " + property.name + ".</p>");
 	}
 }
 
@@ -2248,10 +2248,10 @@ function mortgage(index) {
 	sq.mortgage = true;
 	p.money += mortgagePrice;
 
-	document.getElementById("mortgagebutton").value = "Unmortgage for $" + unmortgagePrice;
-	document.getElementById("mortgagebutton").title = "Unmortgage " + sq.name + " for $" + unmortgagePrice + ".";
+	document.getElementById("mortgagebutton").value = "Unmortgage for £" + unmortgagePrice;
+	document.getElementById("mortgagebutton").title = "Unmortgage " + sq.name + " for £" + unmortgagePrice + ".";
 
-	addAlert(p.name + " mortgaged " + sq.name + " for $" + mortgagePrice + ".");
+	addAlert(p.name + " mortgaged " + sq.name + " for £" + mortgagePrice + ".");
 	updateOwned();
 	updateMoney();
 
@@ -2270,10 +2270,10 @@ function unmortgage(index) {
 
 	p.pay(unmortgagePrice, 0);
 	sq.mortgage = false;
-	document.getElementById("mortgagebutton").value = "Mortgage for $" + mortgagePrice;
-	document.getElementById("mortgagebutton").title = "Mortgage " + sq.name + " for $" + mortgagePrice + ".";
+	document.getElementById("mortgagebutton").value = "Mortgage for £" + mortgagePrice;
+	document.getElementById("mortgagebutton").title = "Mortgage " + sq.name + " for £" + mortgagePrice + ".";
 
-	addAlert(p.name + " unmortgaged " + sq.name + " for $" + unmortgagePrice + ".");
+	addAlert(p.name + " unmortgaged " + sq.name + " for £" + unmortgagePrice + ".");
 	updateOwned();
 	return true;
 }
@@ -2302,7 +2302,7 @@ function land(increasedRent) {
 				buy();
 			}
 		} else {
-			document.getElementById("landed").innerHTML = "<div>You landed on <a href='javascript:void(0);' onmouseover='showdeed(" + p.position + ");' onmouseout='hidedeed();' class='statscellcolor'>" + s.name + "</a>.<input type='button' onclick='buy();' value='Buy ($" + s.price + ")' title='Buy " + s.name + " for " + s.pricetext + ".'/></div>";
+			document.getElementById("landed").innerHTML = "<div>You landed on <a href='javascript:void(0);' onmouseover='showdeed(" + p.position + ");' onmouseout='hidedeed();' class='statscellcolor'>" + s.name + "</a>.<input type='button' onclick='buy();' value='Buy (£" + s.price + ")' title='Buy " + s.name + " for " + s.pricetext + ".'/></div>";
 		}
 
 
@@ -2369,11 +2369,11 @@ function land(increasedRent) {
 			}
 		}
 
-		addAlert(p.name + " paid $" + rent + " rent to " + player[s.owner].name + ".");
+		addAlert(p.name + " paid £" + rent + " rent to " + player[s.owner].name + ".");
 		p.pay(rent, s.owner);
 		player[s.owner].money += rent;
 
-		document.getElementById("landed").innerHTML = "You landed on " + s.name + ". " + player[s.owner].name + " collected $" + rent + " rent.";
+		document.getElementById("landed").innerHTML = "You landed on " + s.name + ". " + player[s.owner].name + " collected £" + rent + " rent.";
 	} else if (s.owner > 0 && s.owner != turn && s.mortgage) {
 		document.getElementById("landed").innerHTML = "You landed on " + s.name + ". Property is mortgaged; no rent was collected.";
 	}
@@ -2389,7 +2389,7 @@ function land(increasedRent) {
 		updatePosition();
 
 		if (p.human) {
-			popup("<div>Go to jail. Go directly to Jail. Do not pass GO. Do not collect $200.</div>", gotojail);
+			popup("<div>Go to parking. Go directly to parking. Do not pass GO. Do not collect $200.</div>", gotojail);
 		} else {
 			gotojail();
 		}
@@ -2455,7 +2455,7 @@ function roll() {
 
 
 			if (p.human) {
-				popup("You rolled doubles three times in a row. Go to jail.", gotojail);
+				popup("You rolled doubles three times in a row. Go to parking.", gotojail);
 			} else {
 				gotojail();
 			}
@@ -2486,7 +2486,7 @@ function roll() {
 			p.position = 10 + die1 + die2;
 			doublecount = 0;
 
-			addAlert(p.name + " rolled doubles to get out of jail.");
+			addAlert(p.name + " rolled doubles to get out of parking.");
 
 			land();
 		} else {
@@ -2505,7 +2505,7 @@ function roll() {
 				}
 			} else {
 				$("#landed").show();
-				document.getElementById("landed").innerHTML = "You are in jail.";
+				document.getElementById("landed").innerHTML = "You are in parking.";
 
 				if (!p.human) {
 					popup(p.AI.alertList, game.next);
@@ -2567,21 +2567,21 @@ function play() {
 
 	if (p.jail) {
 		$("#landed").show();
-		document.getElementById("landed").innerHTML = "You are in jail.<input type='button' title='Pay $50 fine to get out of jail immediately.' value='Pay $50 fine' onclick='payfifty();' />";
+		document.getElementById("landed").innerHTML = "You are in parking.<input type='button' title='Pay £50 fine to get out of parking immediately.' value='Pay $50 fine' onclick='payfifty();' />";
 
 		if (p.communityChestJailCard || p.chanceJailCard) {
-			document.getElementById("landed").innerHTML += "<input type='button' id='gojfbutton' title='Use &quot;Get Out of Jail Free&quot; card.' onclick='useJailCard();' value='Use Card' />";
+			document.getElementById("landed").innerHTML += "<input type='button' id='gojfbutton' title='Use &quot;Get Out of parking Free&quot; card.' onclick='useJailCard();' value='Use Card' />";
 		}
 
-		document.getElementById("nextbutton").title = "Roll the dice. If you throw doubles, you will get out of jail.";
+		document.getElementById("nextbutton").title = "Roll the dice. If you throw doubles, you will get out of parking.";
 
 		if (p.jailroll === 0)
-			addAlert("This is " + p.name + "'s first turn in jail.");
+			addAlert("This is " + p.name + "'s first turn in parking.");
 		else if (p.jailroll === 1)
-			addAlert("This is " + p.name + "'s second turn in jail.");
+			addAlert("This is " + p.name + "'s second turn in parking.");
 		else if (p.jailroll === 2) {
 			document.getElementById("landed").innerHTML += "<div>NOTE: If you do not throw doubles after this roll, you <i>must</i> pay the $50 fine.</div>";
-			addAlert("This is " + p.name + "'s third turn in jail.");
+			addAlert("This is " + p.name + "'s third turn in parking.");
 		}
 
 		if (!p.human && p.AI.postBail()) {
@@ -2822,13 +2822,13 @@ window.onload = function() {
 
 	// Jail corrections
 	$("<div>", {id: "jailpositionholder" }).appendTo("#jail");
-	$("<span>").text("Jail").appendTo("#jail");
+	$("<span>").text("Parking").appendTo("#jail");
 
 	document.getElementById("jail").enlargeId = "enlarge40";
 
-	document.getElementById("enlarge-wrap").innerHTML += "<div id='enlarge40' class='enlarge'><div id='enlarge40color' class='enlarge-color'></div><br /><div id='enlarge40name' class='enlarge-name'>Jail</div><br /><div id='enlarge40price' class='enlarge-price'><img src='images/jake_icon.png' height='80' width='80' alt='' style='position: relative; top: -20px;' /></div><br /><div id='enlarge40token' class='enlarge-token'></div></div>";
+	document.getElementById("enlarge-wrap").innerHTML += "<div id='enlarge40' class='enlarge'><div id='enlarge40color' class='enlarge-color'></div><br /><div id='enlarge40name' class='enlarge-name'>Parking</div><br /><div id='enlarge40price' class='enlarge-price'><img src='images/jake_icon.png' height='80' width='80' alt='' style='position: relative; top: -20px;' /></div><br /><div id='enlarge40token' class='enlarge-token'></div></div>";
 
-	document.getElementById("enlarge40name").innerHTML = "Jail";
+	document.getElementById("enlarge40name").innerHTML = "Parking";
 
 	// Create event handlers for hovering and draging.
 
